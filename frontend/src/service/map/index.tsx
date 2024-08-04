@@ -16,6 +16,9 @@ class MapService {
 
     const response = await axios({
       method: "GET",
+      headers: {
+        "x-vercel-set-bypass-cookie": true
+      },
       url: `${backendURL}/api/temperature/location?lat=${karachi[0]}&lng=${karachi[1]}&radius=7`,
     });
     return response.data as Array<Data>;
