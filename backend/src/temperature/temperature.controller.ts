@@ -4,6 +4,8 @@ import { Request, Response } from 'express';
 import { getTemperatureData } from './temperature.service';
 
 export const getTemperaturesByLocation = async (req: Request, res: Response): Promise<void> => {
+  console.log('calling getTemperaturesByLocation');
+  
   try {
     const { lat, lng, radius } = req.query;
     

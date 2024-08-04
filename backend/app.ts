@@ -38,6 +38,7 @@ const connectWithRetry = () => {
 connectWithRetry();
 
 // Routes
+app.use('/healthcheck', ()=> response.send('good'));
 app.use('/api', apiRoutes);
 
 export default app;
