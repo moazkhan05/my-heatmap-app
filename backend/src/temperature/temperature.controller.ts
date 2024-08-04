@@ -17,8 +17,6 @@ export const getTemperaturesByLocation = async (req: Request, res: Response): Pr
       parseFloat(lng as string),
       radius ? parseInt(radius as string) : 7
     );
-    console.log('here', temperatureData);
-    
 
     res.json(temperatureData);
   } catch (error) {

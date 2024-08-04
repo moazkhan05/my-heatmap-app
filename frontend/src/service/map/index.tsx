@@ -1,7 +1,8 @@
 import axios from "axios";
 import { PlacesClient } from "@googlemaps/places";
 
-const googleApiKey = process.env.GoogleApiKey;
+
+const googleApiKey = import.meta.env.VITE_APP_GoogleApiKey;
 class MapService {
   async temperatureBasedOnLocation(
     location?: {
@@ -14,7 +15,7 @@ class MapService {
 
     const response = await axios({
       method: "GET",
-      url: `http://192.168.30.250:3000/api/temperature/location?lat=${karachi[0]}&lng=${karachi[1]}&radius=7`,
+      url: `http://localhost:3000/api/temperature/location?lat=${karachi[0]}&lng=${karachi[1]}&radius=7`,
     });
     return response.data as Array<Data>;
   }
